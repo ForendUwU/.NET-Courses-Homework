@@ -6,7 +6,8 @@ namespace KursDZ
     {
         static void Main(string[] args)
         {
-            
+            TicTacToe game = new TicTacToe();
+            game.Start();
         }
 
         static void GuessTheNumberGame()

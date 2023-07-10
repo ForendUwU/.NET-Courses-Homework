@@ -34,12 +34,13 @@ namespace KursDZ
                             while (true)
                             {
                                 Console.WriteLine("Options\n 1. Who is guessing \n 2. Count of attempts");
-
+                                
                                 int optionChoice = 0;
 
                                 if (int.TryParse(Console.ReadLine(), out optionChoice))
                                 {
                                     Console.Clear();
+
                                     switch (optionChoice)
                                     {
                                         case 1:
@@ -74,6 +75,7 @@ namespace KursDZ
                                             break;
                                         case 2:
                                             Console.Clear();
+
                                             Console.WriteLine("Enter the count of attempts. Current count is " + this.attempts);
                                             int countAttempts = 0;
                                             if (int.TryParse(Console.ReadLine(), out countAttempts))
