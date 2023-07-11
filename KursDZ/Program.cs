@@ -6,10 +6,21 @@ namespace KursDZ
     {
         static void Main(string[] args)
         {
+            string[] allWords = File.ReadAllLines("Dictionary/Dictionary.txt");
+            Random rand = new Random();
+
+            HangedMan game = new HangedMan(allWords[rand.Next(0, 11650)]);
+            game.Start();
+
+            Console.ReadLine();
+
+        }
+
+        static void TicTacToe()
+        {
             TicTacToe game = new TicTacToe();
             game.Start();
         }
-
         static void GuessTheNumberGame()
         {
             GuessTheNumberGame game = new GuessTheNumberGame();
