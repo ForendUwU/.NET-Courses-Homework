@@ -6,6 +6,17 @@ namespace KursDZ
     {
         static void Main(string[] args)
         {
+            
+
+        }
+
+        static void GameOfSticks() 
+        {
+            GameOfSticks game = new GameOfSticks();
+            game.Start();
+        }
+        static void HangedManGame() 
+        {
             string[] allWords = File.ReadAllLines("Dictionary/Dictionary.txt");
             Random rand = new Random();
 
@@ -13,9 +24,7 @@ namespace KursDZ
             game.Start();
 
             Console.ReadLine();
-
         }
-
         static void TicTacToe()
         {
             TicTacToe game = new TicTacToe();
