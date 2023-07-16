@@ -1,4 +1,5 @@
-﻿using System.Threading.Channels;
+﻿using System.Collections.Generic;
+using System.Threading.Channels;
 
 namespace KursDZ
 {
@@ -6,8 +7,21 @@ namespace KursDZ
     {
         static void Main(string[] args)
         {
-            
+            RusChessPlayers(@"ChessPlayers\Top100ChessPlayers.csv");
+        }
 
+        static void RusChessPlayers(string file) 
+        {
+            IEnumerable<ChessPlayer> players = File.ReadAllLines(file)
+                .Skip(1)
+                .Select(ChessPlayer.ParseCSV)
+                .Where(x => x.Country == "RUS")
+                .OrderBy(x => x.BirthDate);
+
+            foreach (ChessPlayer player in players) 
+            {
+                Console.WriteLine(player.ToString());
+            }
         }
 
         static void GameOfSticks() 
